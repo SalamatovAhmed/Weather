@@ -1,0 +1,142 @@
+/* Общие стили */
+body {
+    margin: 0;
+    font-family: 'Inter', Arial, sans-serif;
+    background: linear-gradient(to bottom, #4facfe, #00f2fe);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+/* Контейнер приложения */
+.app {
+    width: 400px;
+}
+/* Поисковая панель */
+.search-box {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.search-box input, .search-box select, .search-box button {
+    padding: 10px 15px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+.search-box input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    backdrop-filter: blur(5px);
+}
+.search-box select {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    cursor: pointer;
+}
+.search-box button {
+    background: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.search-box button:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+/* Карточка текущей погоды */
+.weather-card {
+    background: rgba(255,255,255,0.15);
+    padding: 20px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+.weather-card:hover {
+    transform: translateY(-3px);
+}
+.weather-card h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+.weather-card p {
+    margin: 5px 0;
+}
+/* Детали погоды */
+.details {
+    margin-top: 10px;
+    font-size: 14px;
+}
+/* Прогноз */
+.forecast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    gap: 10px;
+}
+.forecast-grid .weather-card {
+    padding: 10px;
+    font-size: 12px;
+}
+/* Анимация появления */
+.weather-card, .forecast-grid .weather-card {
+    transition: all 0.3s ease;
+}
+/* Уже есть общие стили, добавим адаптивность */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .app {
+        width: 100%;
+    }
+
+    .search-box {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .search-box input,
+    .search-box select,
+    .search-box button {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .weather-card {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .forecast-grid {
+        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+        gap: 8px;
+    }
+
+    .forecast-grid .weather-card {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+}
+
+/* Дополнительно: плавная прокрутка и центрирование на маленьких экранах */
+body {
+    min-width: 0;
+}
