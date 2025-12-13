@@ -1,0 +1,111 @@
+/* --- ГЛОБАЛЬНЫЕ СТИЛИ --- */
+body {
+    margin: 0;
+    font-family: 'Inter', Arial, sans-serif;
+    background: linear-gradient(to bottom, #4facfe, #00f2fe);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.app {
+    width: 100%;
+    max-width: 400px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+/* --- ПОИСКОВАЯ ПАНЕЛЬ --- */
+.search-box {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.search-box input,
+.search-box select,
+.search-box button {
+    padding: 10px 15px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.search-box input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.search-box select,
+.search-box button {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    cursor: pointer;
+}
+
+/* --- КАРТОЧКА ТЕКУЩЕЙ ПОГОДЫ --- */
+.weather-card {
+    background: rgba(255,255,255,0.15);
+    padding: 20px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+}
+
+/* --- ПРОГНОЗ --- */
+.forecast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    gap: 10px;
+}
+
+.forecast-grid .weather-card {
+    padding: 10px;
+    font-size: 12px;
+}
+
+/* 📌 Чтобы текст описания не вылазил */
+.weather-card .desc {
+    white-space: nowrap;        /* не переносить */
+    overflow: hidden;           /* скрывать лишнее */
+    text-overflow: ellipsis;    /* "..." */
+    display: block;
+    max-width: 100%;
+}
+
+/* --- АДАПТИВ --- */
+@media (max-width: 480px) {
+
+    .search-box {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .search-box input,
+    .search-box select,
+    .search-box button {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .weather-card {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .forecast-grid {
+        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+        gap: 8px;
+    }
+}

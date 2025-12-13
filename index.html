@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather — Погодное приложение</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.png">
+</head>
+<body>
+<div class="app">
+    <h1>Weather — Погодное приложение</h1>
+
+    <div class="search-box">
+        <input type="text" id="cityInput" placeholder="Введите город">
+        <button id="searchBtn">Поиск</button>
+        <select id="unitBtn">
+            <option value="metric">°C</option>
+            <option value="imperial">°F</option>
+        </select>
+    </div>
+
+    <div class="weather-card" id="currentCard">
+        <h2 id="location">—</h2>
+        <p id="weatherDesc">—</p>
+        <p id="temp"><span>—</span><sup id="tempUnit">°C</sup></p>
+
+        <div class="details">
+            <p id="feels">—</p>
+            <p id="humidity">— % влажность</p>
+            <p id="wind">— м/с ветер</p>
+            <p id="pressure">— гПа</p>
+            <p id="time">Время и дата</p>
+        </div>
+    </div>
+
+    <h3>Прогноз на 5 дней</h3>
+    <div id="forecast" class="forecast-grid"></div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
+
